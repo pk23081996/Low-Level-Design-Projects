@@ -47,7 +47,11 @@ int main(int argc, char *argv[])
     if(isInteractiveMode(argc)) {
         InteractiveMode obj(commandExecutorFactory, printer);
         obj.process();
-    }
+    } /*
+    else if(isFileMode(args) {
+        new FileMode(commandExecutorFactory, printer, args[0]);
+    } */
+    // Note: We should use factory pattern here for the mode! Because whenever a new mode will be introduced, we would have to change the main().
 //    driver->updateRestaurantMenu("R2", UpdateRestaurant::UpdateItem, "Chicken Biryani", 150);
 
     driver->placeOrder(Customer("Ashwin"), {make_pair("Idli",3), make_pair("Dosa",1)}, OrderSelectionCriteria::Lowest_Cost);
